@@ -1,0 +1,35 @@
+# === Core ===
+python-dotenv>=1.0.0
+numpy>=1.24
+soundfile>=0.12
+
+# === Deep learning (CPU) ===
+torch>=2.0
+torchaudio>=2.0
+
+# === VAD: Silero ===
+# Silero VAD поставляется через torch.hub — pip-пакета нет
+# (silero_vad кандидат, если официальный пакет появится: silero-vad>=5.0)
+
+# === Speaker ID: ECAPA-TDNN ===
+speechbrain>=0.5.16
+
+# === ASR: GigaAM (Sber) ===
+# Установить из исходников (PyPI-пакета нет)
+gigaam @ git+https://github.com/salute-developers/GigaAM.git
+
+# === LLM: Qwen3 (GGUF via llama.cpp) ===
+llama-cpp-python>=0.2.90
+
+# === UI: PySide6 ===
+PySide6>=6.5.0
+
+# === Опционально: более удобный пакет для GigaAM ===
+# Если gigaam из git недоступен, можно ставить через nemo_toolkit и вручную
+# подкладывать чекпойнт — но это усложняет установку для конечного пользователя.
+nemo_toolkit[asr]>=2.0.0; platform_system != "Windows" or python_version >= "3.11"
+
+# === Удалено в архитектуре 2.1 ===
+# - faster-whisper        (заменён GigaAM)
+# - pyannote.audio        (заменён ECAPA-TDNN + правило v2.1)
+# - HF_TOKEN              (больше не требуется)

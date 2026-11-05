@@ -1,0 +1,33 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+venv*/
+
+# Local user data
+config.json
+.env
+output/
+logs/
+models/
+enrollment/
+
+# Audio and local artifacts
+*.m4a
+*.wav
+*.mp3
+*.aac
+*.amr
+*.ogg
+*.flac
+
+# Large local models
+*.gguf
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
